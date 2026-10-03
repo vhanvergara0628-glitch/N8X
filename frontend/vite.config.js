@@ -3,6 +3,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
+  // GitHub Pages serves this site from /N8X/, so the deploy workflow sets VITE_BASE.
+  base: process.env.VITE_BASE || '/',
   plugins: [react(), tailwindcss()],
   server: {
     port: 5173,

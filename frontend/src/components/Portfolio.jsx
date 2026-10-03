@@ -6,7 +6,7 @@ const team = [
     role: 'Chief Executive Officer',
     description:
       'Leads business development, client relations, marketing, company direction, and overall project management.',
-    image: '/vhan.png',
+    image: `${import.meta.env.BASE_URL}vhan.png`,
     alt: 'Vhan Vergara',
   },
   {
@@ -14,7 +14,7 @@ const team = [
     role: 'Chief Technology Officer',
     description:
       'Leads technical development, software architecture, and the implementation of reliable technology solutions.',
-    image: '/christian.png',
+    image: `${import.meta.env.BASE_URL}christian.png`,
     alt: 'Christian Vergara',
   },
   {
@@ -22,7 +22,7 @@ const team = [
     role: 'Chief Technology Officer',
     description:
       'Leads backend development, systems engineering, and the technical infrastructure behind N8X solutions.',
-    image: '/tristan3.jpg',
+    image: `${import.meta.env.BASE_URL}tristan3.jpg`,
     imageClassName: 'scale-[1.4]',
     alt: 'Tristan Reboredo',
   },

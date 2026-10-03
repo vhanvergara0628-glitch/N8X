@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { CALENDLY_URL, bookingLink } from '../config'
+import { API_URL, CALENDLY_URL, bookingLink } from '../config'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -12,7 +12,7 @@ export default function Contact() {
     setStatus(null)
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

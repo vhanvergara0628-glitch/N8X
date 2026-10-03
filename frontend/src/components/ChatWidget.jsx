@@ -1,5 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import AtomLogo from './AtomLogo'
+import { API_URL } from '../config'
 
 const WELCOME_MESSAGE =
   "Hi! I'm N8X, your virtual assistant. Ask me anything about our services, and I'll help you out!"
@@ -69,7 +70,7 @@ export default function ChatWidget() {
 
   const saveLead = async (name, email, transcript) => {
     try {
-      const res = await fetch('/api/chat/lead', {
+      const res = await fetch(`${API_URL}/api/chat/lead`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, email, transcript }),
@@ -119,7 +120,7 @@ export default function ChatWidget() {
     setTyping(true)
 
     try {
-      const res = await fetch('/api/chat', {
+      const res = await fetch(`${API_URL}/api/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
