@@ -1,6 +1,5 @@
 import nx8 from '../assets/nx8.png'
-
-const CALENDLY_URL = 'https://calendly.com/your-username'
+import { bookingLink } from '../config'
 
 const offerings = [
   'Web Development',
@@ -36,9 +35,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-3">
             <a
-              href={CALENDLY_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...bookingLink}
               data-cursor="pointer"
               className="bg-blue-600 hover:bg-blue-500 text-white text-[13px] font-medium px-7 py-3 rounded-full transition-all duration-150 shadow-[0_2px_12px_rgba(59,130,246,0.35)] hover:shadow-[0_4px_20px_rgba(59,130,246,0.5)]"
             >
