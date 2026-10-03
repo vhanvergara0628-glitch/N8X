@@ -1,6 +1,5 @@
 import { useState } from 'react'
-
-const CALENDLY_URL = 'https://calendly.com/your-username'
+import { CALENDLY_URL, bookingLink } from '../config'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
@@ -118,18 +117,24 @@ export default function Contact() {
               <h3 className="text-[15px] font-semibold text-[#111] dark:text-[#f5f5f7] mb-2">
                 Prefer to schedule a call?
               </h3>
-              <p className="text-[13px] text-[#888] dark:text-[#666] mb-6">
-                Book a free 30-minute consultation to discuss your project.
-              </p>
-              <a
-                href={CALENDLY_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                data-cursor="pointer"
-                className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-[13px] font-medium px-7 py-3 rounded-full transition-all duration-150 shadow-[0_2px_12px_rgba(59,130,246,0.35)] hover:shadow-[0_4px_20px_rgba(59,130,246,0.5)]"
-              >
-                Schedule on Calendly
-              </a>
+              {CALENDLY_URL ? (
+                <>
+                  <p className="text-[13px] text-[#888] dark:text-[#666] mb-6">
+                    Book a free 30-minute consultation to discuss your project.
+                  </p>
+                  <a
+                    {...bookingLink}
+                    data-cursor="pointer"
+                    className="inline-block bg-blue-600 hover:bg-blue-500 text-white text-[13px] font-medium px-7 py-3 rounded-full transition-all duration-150 shadow-[0_2px_12px_rgba(59,130,246,0.35)] hover:shadow-[0_4px_20px_rgba(59,130,246,0.5)]"
+                  >
+                    Schedule on Calendly
+                  </a>
+                </>
+              ) : (
+                <p className="text-[13px] text-[#888] dark:text-[#666]">
+                  Online booking is coming soon. Send us a message and we'll set up a free 30-minute consultation with you.
+                </p>
+              )}
             </div>
           </div>
         </div>

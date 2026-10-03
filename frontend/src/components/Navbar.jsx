@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import nx8 from '../assets/nx8.png'
-
-const CALENDLY_URL = 'https://calendly.com/your-username'
+import { bookingLink } from '../config'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
@@ -42,9 +41,7 @@ export default function Navbar() {
           <div className="w-px h-4 bg-blue-900/60 dark:bg-blue-900/60 hidden md:block" />
 
           <a
-            href={CALENDLY_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            {...bookingLink}
             data-cursor="pointer"
             className="text-[12px] font-semibold bg-blue-600 hover:bg-blue-500 text-white px-4 py-1.5 rounded-full shadow-[0_0_14px_rgba(59,130,246,0.4)] transition-all duration-150 shrink-0"
           >

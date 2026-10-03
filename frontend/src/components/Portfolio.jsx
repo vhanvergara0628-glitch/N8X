@@ -22,7 +22,8 @@ const team = [
     role: 'Chief Technology Officer',
     description:
       'Leads backend development, systems engineering, and the technical infrastructure behind N8X solutions.',
-    image: '/realtristan.png',
+    image: '/tristan3.jpg',
+    imageClassName: 'scale-[1.4]',
     alt: 'Tristan Reboredo',
   },
 ]
@@ -35,7 +36,7 @@ function MemberCard({ member }) {
           <img
             src={member.image}
             alt={member.alt || member.name}
-            className="w-full h-full object-cover"
+            className={`w-full h-full object-cover grayscale ${member.imageClassName || ''}`}
           />
         ) : (
           <>
